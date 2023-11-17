@@ -1,7 +1,7 @@
 /**
  * Generic Linked List.
  *
- * @file list/list.hpp
+ * @file list.hpp
  *
  * @brief Implementation of a generic bi-directional linked list.
  *

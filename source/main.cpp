@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "list.hpp"
+#include "linked-list.hpp"
 
 int main() {
     DS_HPP::List<int> list1 = DS_HPP::List<int>({1, 2, 3, 4});
