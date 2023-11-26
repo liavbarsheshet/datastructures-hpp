@@ -24,8 +24,9 @@
 #include <iostream>
 #include <vector>
 
-#include "iterator.hpp"
 #include "exceptions.hpp"
+#include "functions.hpp"
+#include "iterator.hpp"
 
 #ifndef DS_HPP_LIST
 #define DS_HPP_LIST
@@ -603,7 +604,41 @@ public:
 
     }
 
+    //TODO: Documentation.
+    List<T, Size> Filter(const DS_HPP::FilterFunction<T> &filter_function) const {
+        List<T, Size> filtered_list;
+
+        for (auto item: *this) {
+            if (filter_function(item)) filtered_list.Append(item);
+        }
+
+        return filtered_list;
+    }
+
+    List<T, Size> Shuffle(const DS_HPP::RandomFunction<T> &random_function) const {
+        List<T, Size> list = List<T, Size>(*this);
+        Size i = 0, random_index;
+
+        while (i < list.length) {
+            random_function(i, list.length, random_index);
+            T temp = list[random_index];
+            list[random_index] = list[i];
+            list[i] = temp;
+            ++i;
+        }
+
+        return list;
+    }
+
+    List<T, Size> Sort(const DS_HPP::SortFunction<T> &sort_function) const {
+        // TODO: Implement
+        List<T, Size> list = List<T, Size>(*this);
+
+        return list;
+    }
+
     // Static Methods
+
     /**
      * Concatenates multiple linked lists into one.
      *

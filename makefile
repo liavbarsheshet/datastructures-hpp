@@ -2,7 +2,7 @@
 NAME = ds-hpp
 VERSION = 1.0.0
 
-# Enviroment
+# Environment
 CFLAGS = -Wall -g -std=c++20
 OBJS = main.o
 CC = g++
